@@ -1,9 +1,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base 
+from .config import settings
 
 
-POSTGRESQL_URL = "asd"
+POSTGRESQL_URL = settings.DATABASE_URL
 
 engine = create_engine(POSTGRESQL_URL)
 
