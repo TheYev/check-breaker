@@ -12,6 +12,8 @@ class TimestampMixin:
     # щоб updated_at оновлювався, треба щоби ти викликав .commit() після зміни об'єкта. SQLAlchemy автоматично це не робить без session.commit().
     update_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
-        onupdate=func.now()
+        server_default=func.now(),  # ставимо значення при створенні
+        onupdate=func.now(),         # автоматично оновлюється при commit()
+        nullable=False
     )
     
