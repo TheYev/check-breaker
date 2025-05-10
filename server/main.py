@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routers import auth
+from .routers import auth, event
 from .utils.database import Base, engine
 
 
-app = FastAPI()
+app = FastAPI() 
 Base.metadata.create_all(bind=engine)
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -20,3 +21,4 @@ async def root():
     return {"message": "server is working"}
 
 app.include_router(auth.router)
+app.include_router(event.router)
