@@ -1,6 +1,6 @@
 DATABASE_URL=postgresql://postgres:postgres@db:5432/check-breaker
 DATABASE_URL_ASYNC=postgresql+asyncpg://postgres:postgres@db:5432/check-breaker
-SECRET_KEY=160dbff0154f924ab0399e9461021677ef4d
+SECRET_KEY=test
 
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ALGORITM=HS256
